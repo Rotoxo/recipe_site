@@ -1,4 +1,3 @@
-/* Global Propertys */
 * {
     overflow: auto;
 }
@@ -6,6 +5,29 @@
 body {
     background-color: #8BA1BB;
     font-family: Arial;
+    margin: 0;
+}
+
+div.content {
+    background-color: white;
+    margin: 40px 8px 80px 8px;
+    padding: 0px 8px 20px 8px;
+    /*min-width: 350px;*/
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 12px;
+}
+
+p.description {
+    text-align: center;
+    max-width: 400px;
+    display: inline-block;
+    font-size: 14px;
 }
 
 .center {
@@ -13,10 +35,10 @@ body {
     width: 100%;
 }
 
-h1 {
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 12px;
+div.category {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    overflow: visible;
 }
 
 p.category {
@@ -30,23 +52,7 @@ p.category {
     font-size: 16px;
 }
 
-div.category {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-div.content {
-    background-color: white;
-    margin: 60px 10% 80px 10%;
-    padding: 0px 30px 30px 30px;
-    min-width: 500px;
-    max-width: 700px;
-    width: 100%;
-    box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.616);
-    overflow: visible;
-}
-
-div.seperator {
+div.separator {
     height: 1px;
     width: 100px;
     background-color: black;
@@ -54,50 +60,42 @@ div.seperator {
     margin-right: auto;
 }
 
-p.description {
-    /* Kommentarzeile in CSS */
-    text-align: center;
-    max-width: 400px;
-    display: inline-block;
-    font-size: 14px;
-}
 
 div.info {
-    position: relative;
-    background-color: blue;
-}
-
-img.info {
-    display: block;
-    max-height: 400px;
-    object-fit: cover;
-    min-height: 300px;
-    background-color: gray;
+    position:relative;
 }
 
 table.info {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 80px;
-    color: white;
-    background-color: #6C829DC0 /* #RRGGBBC0 die letzten beiden zaheln regulieren die Tranzparenz (FF = 100%) */;
+    position:absolute; 
+    bottom:0; 
+    width: 100%; color: white;
+    background-color: #6C829DC0;
+    height: 50px
 }
 
 /* All the td of the table that has a info class */
 table.info td {
     text-align: center;
     vertical-align: top;
-    font-size: 14px;
+    font-size: 12px;
 }
+
 table.info th {
     vertical-align: bottom;
-    padding: 8px;
-    font-size: 16px;
+    padding-bottom: 8px;
+    font-size: 14px;
+}
+
+img.info {
+    display: block;
+    max-height: 400px;
+    object-fit: cover;
+    min-height: 200px;
+    background-color: lightgray;
 }
 
 div.col {
-    width: 45%;
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -105,33 +103,31 @@ div.col h2 {
     text-align: center;
     text-transform: uppercase;
     font-size: 15px;
-    border-bottom: 5px solid #6c829d;
+    border-bottom: 5px solid #6C829D;
     padding-bottom: 5px;
-    margin-right: 10%;
-    margin-bottom: 20px;
 }
 
 div.col1 {
     display: inline-block;
-    margin-right: 50px;
+    /*margin-right: 10%;*/
+    margin-bottom : 20px;
 }
 
 div.col2 {
-    float: right;
+    /*float: right;*/
 }
 
 div.ingredients p {
-    font-size: 14px;
     text-align: center;
-    margin-right: 10%;
-    margin-top: 1px;
-    margin-bottom: 5px;
-    padding: 8px;
+    font-size: 14px;
     border: 1px solid lightgray;
+    padding: 8px 0;
+    margin-top: 4px;
+    margin-bottom: 0;
 }
 
 table.instructions p.number {
-    background-color: #6c829d;
+    background-color: #6C829D;
     color: white;
     font-size: 14px;
     font-weight: bold;
@@ -144,16 +140,59 @@ table.instructions p.number {
     margin: 0;
 }
 
-table.instructions  td.instruction_step {
-    font-size: 14px;
+table.instructions td.instruction_step {
     padding-left: 10px;
     padding-bottom: 10px;
+    font-size: 14px;
 }
 
-table.instructions  td {
+table.instructions td {
     vertical-align: top;
 }
 
-table.instructions  tr {
+table.instructions tr {
     height: 40px;
+}
+
+/* Desktopstyles */
+@media only screen and (min-width: 768px) {
+    div.content {
+        margin: 60px 10% 80px 10%;
+        padding: 0px 30px 30px 30px;
+        min-width: 350px;
+        max-width: 647px;
+    }
+
+    table.info {
+        height: 80px
+    }
+    
+    table.info td {
+        font-size: 14px;
+    }
+    
+    table.info th {
+        font-size: 16px;
+    }
+
+    div.col {
+        width: 45%;
+    }
+
+    div.col1 {
+        margin-right: 10%;
+    }
+
+    div.col2 {
+        float: right;
+    }
+  }
+
+  /* Desktopstyles for big screens */
+@media only screen and (min-width: 900px) {
+    div.content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 647px;
+    }
 }
